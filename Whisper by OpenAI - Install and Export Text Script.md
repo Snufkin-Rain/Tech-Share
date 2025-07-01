@@ -81,18 +81,12 @@ then , press "Y"
 **批量处理：如果有多个 MP4 文件，可以编写脚本批量提取音频和转录。示例（Python）：**
 
 >import os
-
->import subprocess
-
->for mp4_file in os.listdir('.'):
-
->    if mp4_file.endswith('.mp4'):
-
->        audiofile = mp4file.replace('.mp4', '.mp3')
-
->        subprocess.run(['ffmpeg', '-i', mp4file, '-vn', '-acodec', 'mp3', audiofile])
-
->        subprocess.run(['whisper', audiofile, '--model', 'medium', '--language', 'Japanese', '--outputformat', 'txt'])
+import subprocess
+for mp4_file in os.listdir('.'):
+if mp4_file.endswith('.mp4'):
+audiofile = mp4file.replace('.mp4', '.mp3')
+subprocess.run(['ffmpeg', '-i', mp4file, '-vn', '-acodec', 'mp3', audiofile])
+subprocess.run(['whisper', audiofile, '--model', 'medium', '--language', 'Japanese', '--outputformat', 'txt'])
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -102,19 +96,21 @@ then , press "Y"
 
 >pip show openai-whisper
 
+
 如果 Whisper 已安装，你会看到类似以下输出：
 
-Name: openai-whisper
 
+>Name: openai-whisper
 Version: x.x.x
-
 Location: C:\Users\YourUser\AppData\Local\Programs\Python\Python313\Lib\site-packages
-
 ...
+
+
 
 检查 Python Scripts 目录是否在 PATH 中:
 
 Whisper 的命令行工具通常安装在 Python 的 Scripts 目录（例如 C:\Users\YourUser\AppData\Local\Programs\Python\PythonXX\Scripts）。
+
 
 验证 Scripts 目录： 
 
@@ -122,7 +118,9 @@ Whisper 的命令行工具通常安装在 Python 的 Scripts 目录（例如 C:\
 
 C:\Users\YourUser\AppData\Local\Programs\Python\PythonXX\Scripts\whisper.exe
 
-添加 Scripts 目录到 PATH：
+
+添加 Scripts 目录到 PATH.
+
 
 Windows： 
 
@@ -132,7 +130,7 @@ Windows：
 
 添加 Python 的 Scripts 目录，例如：
 
-C:\Users\YourUser\AppData\Local\Programs\Python\PythonXX\Scripts
+C:\Users\**YourUser**\AppData\Local\Programs\Python\**PythonXX**\Scripts
 
 ![image](https://github.com/user-attachments/assets/bbd65efe-1131-408b-bcf7-d6b7f733b986)
 
