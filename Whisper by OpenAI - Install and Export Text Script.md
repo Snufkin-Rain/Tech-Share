@@ -1,4 +1,6 @@
 Whisper by OpenAI - Install and Export Text Script
+
+
 **安裝Python最新版本**:
 
  
@@ -80,7 +82,7 @@ then , press "Y"
 
 **批量处理：如果有多个 MP4 文件，可以编写脚本批量提取音频和转录。示例（Python）：**
 
->import os
+import os
 import subprocess
 for mp4_file in os.listdir('.'):
 if mp4_file.endswith('.mp4'):
