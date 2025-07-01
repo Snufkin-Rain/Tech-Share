@@ -82,13 +82,13 @@ then , press "Y"
 
 **批量处理：如果有多个 MP4 文件，可以编写脚本批量提取音频和转录。示例（Python）：**
 
-import os
-import subprocess
-for mp4_file in os.listdir('.'):
-if mp4_file.endswith('.mp4'):
-audiofile = mp4file.replace('.mp4', '.mp3')
-subprocess.run(['ffmpeg', '-i', mp4file, '-vn', '-acodec', 'mp3', audiofile])
-subprocess.run(['whisper', audiofile, '--model', 'medium', '--language', 'Japanese', '--outputformat', 'txt'])
+>import os
+>import subprocess
+>for mp4_file in os.listdir('.'):
+>if mp4_file.endswith('.mp4'):
+>audiofile = mp4file.replace('.mp4', '.mp3')
+>subprocess.run(['ffmpeg', '-i', mp4file, '-vn', '-acodec', 'mp3', audiofile])
+>subprocess.run(['whisper', audiofile, '--model', 'medium', '--language', 'Japanese', '--outputformat', 'txt'])
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
